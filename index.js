@@ -62,14 +62,6 @@ function createTimeOutEvent(timeDate) {
   return this;
 }
 
-// let cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 27])
-// createTimeInEvent.call(cRecord, "2044-03-15 0900")
-// createTimeOutEvent.call(cRecord, "2044-03-15 1100")
-
-// cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 27]);
-// createTimeInEvent.call(cRecord, "2044-03-15 0900");
-// createTimeOutEvent.call(cRecord, "2044-03-15 1100");
-
 function hoursWorkedOnDate(date) {
   const timeIn = this.timeInEvents.find((e) => {
     return e.date === date;
@@ -86,18 +78,16 @@ function wagesEarnedOnDate(date) {
 
 
 function calculatePayroll(arrayOfEmployees) {
-  return arrayOfEmployees.map((employee) => {
-    return employee.timeOutEvents
-      .map((date) => {
-        return wagesEarnedOnDate(date);
-      })
-      .reduce((acc, (curr) => (acc += curr)));
-  });
+//   return arrayOfEmployees.map((employee) => {
+//     return employee.timeOutEvents
+//       .map((date) => {
+//         return wagesEarnedOnDate(date);
+//       })
+//       .reduce((acc,curr) => acc += curr);
+//   });
+return arrayOfEmployees.reduce((total, wages) => total += allWagesFor.call(wages), 0)
 
 }
-
-// function calculatePayroll(array){
-// }
 
 function findEmployeeByFirstName(collection, firstName) {
   return collection.find((employee) => employee.firstName === firstName);
