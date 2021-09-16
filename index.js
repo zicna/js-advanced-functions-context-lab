@@ -88,8 +88,8 @@ function payrollExpense(arrayOfEmployees) {
             }).reduce((acc, curr => acc += curr))
     })
 }
-function calculatePayroll(array){
-}
+// function calculatePayroll(array){
+// }
 
 function findEmployeeByFirstName(collection, firstName){
     return collection.find(employee => employee.firstName === firstName)
